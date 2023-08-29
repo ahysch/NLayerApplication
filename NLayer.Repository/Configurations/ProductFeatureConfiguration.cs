@@ -16,7 +16,7 @@ namespace NLayer.Repository.Configurations
             builder.Property(x => x.Id).UseIdentityColumn();
             builder.ToTable("ProductFeatures");
             // Bir Productfeature'un bir product'ı olur ve bir product'ın bir feature'u olur ve fk'i ProductFeaturedaki productid dir.
-            builder.HasOne(x => x.Product).WithOne(x => x.ProductFeature).HasForeignKey<ProductFeature>(x=>x.ProductId);
+            builder.HasOne(x => x.Product).WithOne(x => x.ProductFeature).HasForeignKey<ProductFeature>(x => x.ProductId);
         }
     }
 }

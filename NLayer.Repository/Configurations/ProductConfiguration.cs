@@ -15,10 +15,10 @@ namespace NLayer.Repository.Configurations
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();
             builder.Property(x => x.Name).IsRequired().HasMaxLength(200);
-            builder.Property(x=>x.Price).IsRequired().HasColumnType("decimal(18,2)");
+            builder.Property(x => x.Price).IsRequired().HasColumnType("decimal(18,2)");
             builder.ToTable("Products");
             // Bir Product'ın bir kategorisi olur ve bir kategorinin birden fazla Product'ı olabilir.
-            builder.HasOne(x=>x.Category).WithMany(x=> x.Products).HasForeignKey(x=>x.CategoryId);
+            builder.HasOne(x => x.Category).WithMany(x => x.Products).HasForeignKey(x => x.CategoryId);
         }
     }
 }
